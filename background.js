@@ -32,7 +32,7 @@ function setEnabled(value) {
     chrome.storage.sync.set({enabled: value})
 }
 
-function setIcon(enabled) {
+function updateIcon(enabled) {
     if (enabled) {
         chrome.action.setIcon(ICON_ENABLED)
     } else {
@@ -41,12 +41,12 @@ function setIcon(enabled) {
 }
 
 getEnabled(enabled => {
-    setIcon(enabled)
+    updateIcon(enabled)
 })
 
 chrome.storage.sync.onChanged.addListener(changes => {
     if (ENABLED in changes) {
-        setIcon(validate(changes[ENABLED].newValue))
+        updateIcon(validate(changes[ENABLED].newValue))
     }
 })
 

@@ -5,7 +5,7 @@ const TEXT_MESSAGE_RENDERER_UPPER = TEXT_MESSAGE_RENDERER.toUpperCase()
 const TIGER = image("emoji_u1f405.svg")
 const TIGER_FACE = image("emoji_u1f42f.svg")
 
-const LOG_NAME = "雪音こはくモード"
+const LOG_NAME = "ホワイトタイガーモード for YouTube"
 
 const ENABLED = "enabled"
 
