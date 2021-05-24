@@ -1,4 +1,6 @@
 const APP = "yt-live-chat-app"
+const PAID_MESSAGE_RENDERER = "yt-live-chat-paid-message-renderer"
+const PAID_MESSAGE_RENDERER_UPPER = PAID_MESSAGE_RENDERER.toUpperCase()
 const TEXT_MESSAGE_RENDERER = "yt-live-chat-text-message-renderer"
 const TEXT_MESSAGE_RENDERER_UPPER = TEXT_MESSAGE_RENDERER.toUpperCase()
 
@@ -109,7 +111,7 @@ function replace(renderer) {
 }
 
 function traverse(chat) {
-    for (const renderer of chat.querySelectorAll(TEXT_MESSAGE_RENDERER)) {
+    for (const renderer of chat.querySelectorAll(`${PAID_MESSAGE_RENDERER}, ${TEXT_MESSAGE_RENDERER}`)) {
         replace(renderer)
     }
 }
@@ -117,7 +119,7 @@ function traverse(chat) {
 function observe(chat) {
     const observer = new MutationObserver((records) => {
         records.forEach(record => record.addedNodes.forEach(node => {
-            if (node.nodeName !== TEXT_MESSAGE_RENDERER_UPPER) {
+            if (node.nodeName !== PAID_MESSAGE_RENDERER_UPPER && node.nodeName !== TEXT_MESSAGE_RENDERER_UPPER) {
                 return
             }
 

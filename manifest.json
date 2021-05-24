@@ -1,7 +1,7 @@
 {
   "name": "ホワイトタイガーモード for YouTube",
   "description": "YouTubeのチャット欄の虎をホワイトタイガーに変えます。",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "manifest_version": 3,
   "minimum_chrome_version": "88",
   "permissions": ["storage"],
